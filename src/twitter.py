@@ -46,12 +46,6 @@ class Twitter(object):
 		jsonresponse = net.get(url)
 		return bytes.decode(jsonresponse)
 		
-	def mention(self, message, user):
-		'''
-		send a mention to your timline with user
-		'''
-		print("Class: {0} - Method: {1}".format(self.__class__, self.mention.__name__))
-		
 	def tweet(self, message):
 		'''
 		send a tweet with message

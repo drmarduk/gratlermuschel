@@ -21,23 +21,6 @@ def strtime(fmt = True):
 		return time
 	else:
 		return int((time - datetime.datetime(1970, 1, 1)) / datetime.timedelta(seconds = 1))
-
-def lol():
-	cfg = myconfig.MyConfig()
-	
-	net = myhttp.oauthhttp()
-	params = {'status':'#gratl'}
-	net.setKeys(cfg._consumer_key, cfg._access_token)
-	net.setSecret(cfg._consumer_secret, cfg._access_token_secret)
-	src = net.request('https://api.twitter.com/1/statuses/update.json', 'POST', params)
-	print(src)
-
-def test():
-	a = ai.AI()
-	a.addFromUser('txt_input')
-	print(a.getAnswer("@gratlermuschel blau oder weiss"))
-	for i in range(10):
-		print(a.getAnswer('#grantlermuschel :) :) :)'))
 	
 	
 def main():
@@ -45,7 +28,7 @@ def main():
 	cfg = myconfig.MyConfig()
 	
 	# le loop
-	_search = search.Search("gratlermuschel") #multi querz search support
+	_search = search.Search("gratlermuschel") #multi query search support, siehe myconfig
 	_twitter = twitter.Twitter()
 	
 	_search.performSearch()
@@ -64,7 +47,7 @@ def main():
 			
 			if len(_search._tweets) > 0:
 				for i in _search._tweets:
-					# antworten an i.from/user
+					# antworten an i.from_user
 					print('{2} - {0}: {1}'.format(i._from_user, i._text.encode('utf-8'), i._date))
 					#antworten
 					_ai = ai.AI()
@@ -72,6 +55,7 @@ def main():
 						_ai.addFromUser(i._from_user)
 					if i._to_user is not None:
 						_ai.addToUser(i._to_user)
+						
 					answer = _ai.getAnswer(i._text)
 					_twitter.tweet(answer)
 					print('--->geantwortet')
@@ -83,7 +67,6 @@ def main():
 
 if __name__ == '__main__':
 	main()
-	#test()
 	#test()
 	
 	

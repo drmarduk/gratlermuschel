@@ -26,6 +26,7 @@ class Search(object):
 		self._init = True
 		
 	def performSearch(self):
+		# doe mach hier was. works but uncool
 		_twitter = twitter.Twitter()
 		if self._refresh_url is not None:
 			self._raw_json = _twitter.search(self._query, self._refresh_url)

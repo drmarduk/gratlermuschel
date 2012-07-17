@@ -39,7 +39,7 @@ class MyConfig(object):
 		self._start = int((datetime.datetime.now() - datetime.datetime(1970, 1, 1)) / datetime.timedelta(seconds = 1))
 		self._lastget = self._start
 		self._hit_words = [ "gratlermuschel" ]
-		self._consumer_key = 'qJqihTltA8m6S0qNUkJig'
-		self._consumer_secret = 'pwLm5xYT1LdOm8VKXk5bDnKG6aImfbeKrafmZTAu4'
-		self._access_token = '618150249-qznfVx5gZwtRdndUAOUBeDlTCtH0UPrMk7uEROzS'
-		self._access_token_secret = 'kJv05u67FzFR3PJoxD9SpqNyEJQoL13LISNj3jM'
+		self._consumer_key = ''
+		self._consumer_secret = ''
+		self._access_token = ''
+		self._access_token_secret = ''
