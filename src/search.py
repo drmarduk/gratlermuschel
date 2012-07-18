@@ -7,7 +7,6 @@ import jsonparser
 import twitter
 import tweet
 import urllib.parse
-import datetime
 
 class Search(object):
 	'''
